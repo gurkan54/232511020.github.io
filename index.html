@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitem</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Hoşgeldiniz</h1>
+        <p>Bu, web sitemdir!</p>
+    </header>
+    
+    <nav>
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Hizmetlerimiz</a>
+        <a href="contact.html">İletişim Sayfamız</a>
+        
+    </nav>
+    
+    <main>
+        <div class="box">
+            <h2>Ana Sayfa</h2>
+            <p>Burası ana sayfamız. Web sitemize hoş geldiniz! Buradan web sitemizin farklı alanlarına erişebilir ve sunduğumuz içerikleri keşfedebilirsiniz.</p>
+        </div>
+        
+        <div class="box">
+            <h3>Son Blog Yazıları</h3>
+            <ul>
+                <li>Blog Yazısı 1</li>
+                <li>Blog Yazısı 2</li>
+                <li>Blog Yazısı 3</li>
+            </ul>
+        </div>
+
+        <!-- jQuery Örnekleri -->
+        <div class="box">
+            <h1 id="myHeader">Merhaba, jQuery!</h1>
+            <button id="myButton">Tıkla</button>
+            <a href="https://www.example.com" class="myLink">Üzerine gel</a>
+            <p id="myParagraph">Bu paragraf gizlenecek.</p>
+            <div class="myDiv">1</div>
+            <div class="myDiv">2</div>
+            <div class="myDiv">3</div>
+            <input type="text" id="myInput" placeholder="Buraya bir şey yazın">
+            <img src="img/resim.jpg" id="myImage" alt="Resim">
+            <ul id="myList">
+                <li>Öğe 1</li>
+                <li>Öğe 2</li>
+                <li>Öğe 3</li>
+            </ul>
+            <form id="myForm">
+                <input type="text" name="isim" placeholder="İsminizi girin">
+                <button type="submit">Gönder</button>
+            </form>
+            <button id="addElement">Yeni Öğe Ekle</button>
+            <div id="elementContainer"></div>
+            <button id="ajaxButton">AJAX Veri Al</button>
+  <div id="ajaxData"></div>
+        </div>
+
+        <script>
+            $("#myHeader").text("jQuery!");
+            $("#myButton").click(function() {
+                alert("Düğmeye tıkladınız!");
+            });
+            $(".myLink").hover(function() {
+                $(this).css("background-color", "yellow");
+            });
+            $("#myParagraph").hide();
+            $(".myDiv").each(function(index) {
+                $(this).text("Öğe " + (index + 1));
+            });
+            $("#myInput").keyup(function() {
+                if ($(this).val().length > 0) {
+                    $(this).css("background-color", "lightgreen");
+                } else {
+                    $(this).css("background-color", "white");
+                }
+            });
+            $("#myImage").fadeIn(1000);
+            $("#myList li:first").remove();
+            $("#myForm").submit(function(event) {
+                event.preventDefault();
+                alert("Form gönderildi!");
+            });
+            $("#addElement").click(function() {
+                $("#elementContainer").append("<p>Yeni öğe</p>");
+            });
+
+            $("#clickMe").click(function() {
+                    alert("Tıklandım!");
+                });
+                $("#hiddenSpan").click(function() {
+                    $(this).css("visibility", "visible");
+                });
+
+                $(document).ready(function() {
+      $("#myForm").submit(function(event) {
+        var name = $("#name").val();
+        var email = $("#email").val();
+
+        if (name == "") {
+          alert("Ad Soyad alanı boş bırakılamaz!");
+          event.preventDefault();
+        }
+
+        if (email == "") {
+          alert("E-posta alanı boş bırakılamaz!");
+          event.preventDefault();
+        }
+      });
+    });
+
+    $(document).ready(function() {
+      $("#ajaxButton").click(function() {
+        $.ajax({
+          url: "demo.txt",
+          success: function(data) {
+            $("#ajaxData").html(data);
+          }
+        });
+      });
+    });
+
+    
+                
+        </script>
+
+        <!-- Span Örnekleri -->
+        
+
+        <div class="box">
+            <div class="box"> <h1>Span Örnekleri</h1>
+            <div class="box"><p>Bu paragraf, farklı stiller ve davranışlar içeren <span>s</span> etiketlerinin kullanımını göstermektedir:</p>
+                <div class="box"><span class="highlight">Bu span vurgulanmıştır.</span>
+                    <div class="box"><span style="color: blue; font-weight: bold;">Bu span mavi renkte ve kalın yazı tipindedir.</span>
+                        <div class="box"> <span>Bu <span style="color: red;">iç içe</span> bir span etiketidir.</span>
+                            <div class="box"> <span id="hiddenSpan" style="visibility: hidden;">Bu s gizli olacaktır.</span>
+                                <div class="box"><span>Bu span bazı <strong>içerik</strong> içerir.</span>
+                                    <div class="box"><span data-value="123">Bu span veri özniteliğine sahiptir.</span>
+                                        <div class="box"><span id="clickMe">Tıkla</span>
+                                            <div class="box">
+                                              
+    </main>
+    
+    <footer>
+       <div><p>&copy; 2024 Web Sitem. Tüm hakları saklıdır.</p></div>
+    </footer>
+    <script src="java.js"></script>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div Kutuları</title>
+    
+</head>
+<body>
+
+    <h1>Div Kutuları</h1>
+
+    <div class="box">
+        <h2>Basit Bir Kutu</h2>
+        <p>Bu bir basit kutudur.</p>
+    </div>
+
+    <div class="box" style="background-color: lightblue; color: white;">
+        <h2>Stillerle Kutu</h2>
+        <p>Bu kutu stillendirilmiştir.</p>
+    </div>
+
+    <div class="box" id="box1">
+        <h2>Sınıf ve ID Öznitelikleriyle Kutu</h2>
+        <p>Bu kutuya sınıf ve ID öznitelikleri verilmiştir.</p>
+    </div>
+
+    <div class="box" style="border: 1px solid black; border-radius: 5px;">
+        <h2>Kenarlık ve Yuvarlak Köşeler</h2>
+        <p>Bu kutunun kenarlığı ve yuvarlak köşeleri var.</p>
+    </div>
+
+    <div class="box" style="width: 300px; height: 200px; background-color: lightgray;">
+        <h2>Genişlik ve Yükseklik</h2>
+        <p>Bu kutunun belirli bir genişliği ve yüksekliği var.</p>
+    </div>
+
+    
+    <div class="box" style="text-align: center;">
+        <h2>Metin Hizalama</h2>
+        <p>Bu kutudaki metin ortalanmıştır.</p>
+    </div>
+
+    <div class="box">
+        <img src="img/resim.jpg" alt="Resim">
+    </div>
+
+    <div class="box">
+        <h2>Başlık ve Paragraf</h2>
+        <p>Bu kutuda bir başlık ve paragraf var.</p>
+    </div>
+
+    <div class="box">
+        <a href="https://www.instagram.com">Tıklanabilir Bağlantı</a>
+    </div>
+
+    <div class="box">Ekstra Kutu 1</div>
+    <div class="box">Ekstra Kutu 2</div>
+    <div class="box">Ekstra Kutu 3</div>
+    <div class="box">Ekstra Kutu 4</div>
+    <div class="box">Ekstra Kutu 5</div>
+    <div class="box">Ekstra Kutu 6</div>
+    <div class="box">Ekstra Kutu 7</div>
+    <div class="box">Ekstra Kutu 8</div>
+    <div class="box">Ekstra Kutu 9</div>
+    <div class="box">Ekstra Kutu 10</div>
+    <div class="box">Ekstra Kutu 11</div>
+    <div class="box">Ekstra Kutu 12</div>
+    <div class="box">Ekstra Kutu 13</div>
+    <div class="box">Ekstra Kutu 14</div>
+    <div class="box">Ekstra Kutu 15</div>
+    <div class="box">Ekstra Kutu 16</div>
+    <div class="box">Ekstra Kutu 17</div>
+    <div class="box">Ekstra Kutu 18</div>
+    <div class="box">Ekstra Kutu 19</div>
+   
+
+
+    
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düzenlenmiş JavaScript Kodlu Web Sitesi</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Hoş Geldiniz</h1>
+       
+        <!-- Kod 1: Geçerli Tarih ve Saati Göster -->
+        <div id="dateDisplay">Geçerli Tarih ve Saat: </div>
+
+        <!-- Kod 2: Arka Plan Rengini Değiştir -->
+        <button onclick="toggleBackgroundColor()">Arka Plan Rengini Değiştir</button>
+
+        <!-- Kod 3: Form Doğrulama -->
+        <form id="myForm">
+            İsim: <input type="text" id="nameField"><br>
+            E-posta: <input type="email" id="emailField"><br>
+            <input type="submit" value="Gönder">
+        </form>
+
+        <!-- Kod 4: Slayt Gösterisi -->
+        <div id="slideShow">
+            <img src="image1.jpg" alt="Resim 1">
+            <img src="image2.jpg" alt="Resim 2">
+            <img src="image3.jpg" alt="Resim 3">
+        </div>
+
+        <!-- Kod 5: Soluklaşma Efekti -->
+        <button onclick="fadeInOut()">Soluklaşma Efekti</button>
+        <p id="fadeText">Bu metin soluklaşacak.</p>
+
+        <!-- Kod 6 - 15: Etkileşimli Öğeler -->
+        <button onclick="changeTextColor()">Metin Rengini Değiştir</button>
+        <p id="textElement">Bu metnin rengi değişecek.</p>
+
+        <button onclick="showHideElement()">Öğeyi Göster/Gizle</button>
+        <div id="hiddenElement">Bu öğe gösterilebilir veya gizlenebilir.</div>
+
+        <button onclick="toggleClass()">Sınıfı Değiştir</button>
+        <div id="toggleElement" class="highlight">Bu öğenin sınıfı değiştirilebilir.</div>
+
+        <button onclick="displayAlert()">Uyarı Göster</button>
+
+        <button onclick="increaseCount()">Tıklama Sayısı: <span id="clickCount">0</span></button>
+
+        <input type="text" id="inputField">
+        <button onclick="getInputValue()">Girilen Değeri Al</button>
+        <p id="inputValue"></p>
+
+        <button onclick="playSound()">Ses Çal</button>
+
+        <button onclick="startStopTimer()">Zamanlayıcıyı Başlat/Durdur</button>
+        <p id="timerDisplay">00:00</p>
+
+        <button onclick="openNewTab()">Yeni Sekmede Aç</button>
+
+        
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
